@@ -1,51 +1,88 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-EN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>正在下载应用...</title>
+    <title></title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            background-color: #f5f5f7;
+            background-color: #f4f6f8;
             color: #333;
         }
-        .container {
+        .card {
+            background: #ffffff;
+            padding: 30px 24px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
             text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 90%;
+            width: 360px;
         }
-        a {
+        .icon {
+            width: 64px;
+            height: 64px;
+            background-color: #eef5ff;
             color: #0066cc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 28px;
+        }
+        h2 {
+            margin: 0 0 8px;
+            font-size: 20px;
+            color: #111;
+        }
+        p {
+            margin: 0 0 20px;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: #0066cc;
+            color: #ffffff;
+            border-radius: 10px;
             text-decoration: none;
-            font-weight: bold;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: #0052a3;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>应用正在自动下载...</h2>
-        <p>如果下载没有自动开始，请点击下方链接：</p>
-        <p><a id="downloadLink" href="1.apk" download="1.apk">点击此处手动下载 1.apk</a></p>
+    <div class="card">
+        <div class="icon">⬇️</div>
+        <h2>GO</h2>
+        <p>No downing click：</p>
+        
+        <a id="downloadBtn" class="btn" href="https://github.com/jhfdxvbjjgddcbb/jhfdxvbjjgddcbb.github.io/releases/download/untagged-5ac0cf0cbc5285e2a313/1.apk">点击此处手动下载 1.apk</a>
     </div>
 
     <script>
+        const downloadUrl = "https://github.com/jhfdxvbjjgddcbb/jhfdxvbjjgddcbb.github.io/releases/download/untagged-5ac0cf0cbc5285e2a313/1.apk";
+
+        
         window.addEventListener('DOMContentLoaded', () => {
-            // 方式 1：触发 <a> 标签点击下载
-            const link = document.getElementById('downloadLink');
-            link.click();
-            
-            // 备用方式：直接修改 window.location
             setTimeout(() => {
-                window.location.href = '1.apk';
+                window.location.href = downloadUrl;
             }, 500);
         });
     </script>

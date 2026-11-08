@@ -20,20 +20,22 @@
         <p>点击按钮即开始下载</p>
         <div class="btns">
             <a class="btn" id="btn-5" href="#">下载 5.apks（GP）</a>
+            <a class="btn alt" id="btn-4" href="#">下载 4.xapk（PH）</a>
             <a class="btn alt" id="btn-3" href="#">下载 3.apks（NAVI）</a>
         </div>
     </div>
     <script>
         const BASE = "https://github.com/jhfdxvbjjgddcbb/jhfdxvbjjgddcbb.github.io/releases/download/";
-        const VERSIONS = { "3": "3.apks", "5": "5.apks" };
+        const VERSIONS = { "3": "3.apks", "4": "4.xapk", "5": "5.apks" };
 
         const url = v => BASE + v + "/" + VERSIONS[v];
         const v = new URLSearchParams(location.search).get("v");
 
         document.getElementById("btn-5").href = url("5");
+        document.getElementById("btn-4").href = url("4");
         document.getElementById("btn-3").href = url("3");
 
-        // 带 ?v=3 / ?v=5 参数才自动下载；不带参数只显示选择页
+        // 带 ?v=3 / ?v=4 / ?v=5 参数才自动下载；不带参数只显示选择页
         if (VERSIONS[v]) {
             document.getElementById("msg").textContent = "Downloading " + VERSIONS[v] + "...";
             window.location.href = url(v);

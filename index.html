@@ -22,11 +22,12 @@
             <a class="btn" id="btn-5" href="#">下载 5.apks（GP）</a>
             <a class="btn alt" id="btn-4" href="#">下载 4.xapk（PH）</a>
             <a class="btn alt" id="btn-3" href="#">下载 3.apks（NAVI）</a>
+            <a class="btn alt" id="btn-3" href="#">下载 6.apks（PAYTM_10.58.4）</a>
         </div>
     </div>
     <script>
         const BASE = "https://github.com/jhfdxvbjjgddcbb/jhfdxvbjjgddcbb.github.io/releases/download/";
-        const VERSIONS = { "3": "3.apks", "4": "4.xapk", "5": "5.apks" };
+        const VERSIONS = { "3": "3.apks", "4": "4.xapk", "5": "5.apks", "6": "6.apks" };
 
         const url = v => BASE + v + "/" + VERSIONS[v];
         const v = new URLSearchParams(location.search).get("v");
